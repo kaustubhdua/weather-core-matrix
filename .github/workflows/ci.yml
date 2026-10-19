@@ -21,6 +21,8 @@ jobs:
           node-version: "22"
       - name: Check JavaScript syntax
         run: node --check app.js
+      - name: Run dependency-free contract tests
+        run: node --test tests/*.test.mjs
       - name: Check required app files
         run: |
           test -s index.html
