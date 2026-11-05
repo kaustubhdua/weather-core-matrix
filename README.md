@@ -7,6 +7,8 @@ A lightweight, browser-based weather dashboard built with vanilla HTML, CSS, and
 - City-based weather lookup
 - Dynamic results rendered in the page
 - Responsive layout with a dedicated search and results area
+- Loading, empty-input and error states (not found, timeout, network failure, malformed response)
+- Requests time out after 10 seconds and the city name is URL-encoded
 - No framework or build step required
 
 ## Run locally
@@ -27,11 +29,20 @@ Then open `http://localhost:8000`.
 
 ## Configuration and limitations
 
-Review `app.js` for the weather data provider and any required API configuration. Provider availability, rate limits, and API-key requirements apply. Weather results are informational and should not be used as the sole basis for safety-critical decisions.
+Weather data comes from the public [wttr.in](https://wttr.in) service; no API key is needed, but availability and rate limits are outside this project's control. Weather results are informational and should not be used as the sole basis for safety-critical decisions.
+
+## Tests
+
+```bash
+node --test tests/*.test.mjs
+```
 
 ## Future improvements
 
-- Add loading, empty, and API-error states
-- Validate city input and support keyboard submission
 - Show the data provider and last-updated time
-- Add accessible labels and automated browser tests
+- Remember the last searched city
+- Behavioural browser tests
+
+## Licence
+
+Copyright (c) 2026 Kaustubh Dua. All rights reserved. See `LICENSE`.
